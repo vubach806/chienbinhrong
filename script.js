@@ -21,3 +21,13 @@ toggleButton.addEventListener('click', function() {
     const ul = nav.querySelector('ul');
     ul.classList.toggle('visible');
 });
+
+document.addEventListener('scroll', function() {
+    // Example effect: change opacity based on scroll position
+    const sections = document.querySelectorAll('.section');
+    sections.forEach(section => {
+        const rect = section.getBoundingClientRect();
+        const opacity = Math.max(0, 1 - (rect.top / window.innerHeight));
+        section.style.opacity = opacity;
+    });
+});
